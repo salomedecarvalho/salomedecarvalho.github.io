@@ -28,3 +28,7 @@ src/
 Put images in `public/images/...` and set `src` on any `Photo` entry in `src/data/projects.ts`
 (e.g. `cover: { src: '/images/manda/cover.jpg', alt: '…', tone: 'purple' }`). Without `src` a branded placeholder renders.
 Illustrations for the slider live in `src/data/profile.ts` → `illustrations`.
+
+## License
+
+This project has no explicit license. Third-party assets listed above remain the property of their respective owners and are not included in this repository.

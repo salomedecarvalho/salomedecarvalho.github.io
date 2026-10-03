@@ -1,0 +1,90 @@
+.section {
+  position: relative;
+  background: var(--purple);
+  color: var(--paper);
+  padding-block: var(--section-y);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Quarter-circle shapes, echoing the footer of the inspiration */
+.section::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: -8vw;
+  bottom: -8vw;
+  width: min(48vw, 640px);
+  aspect-ratio: 1;
+  border-radius: 100% 0 0 0;
+  background: var(--lilac);
+  opacity: 0.25;
+}
+
+.inner {
+  display: grid;
+  gap: clamp(28px, 4vw, 48px);
+}
+
+.inner > .label {
+  color: var(--lime);
+}
+
+.title {
+  font-size: clamp(2.6rem, 9vw, 10rem);
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.title em {
+  font-style: normal;
+  color: var(--lime);
+}
+
+.emailRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+}
+
+.email {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.125rem, 3vw, 2.5rem);
+  overflow-wrap: anywhere;
+  border-bottom: 2px solid currentColor;
+  transition: color var(--dur) var(--ease-out);
+}
+
+.email:hover {
+  color: var(--pink);
+}
+
+.copy {
+  font-weight: 600;
+  font-size: var(--fs-small);
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  transition: background var(--dur) var(--ease-out), color var(--dur) var(--ease-out);
+}
+
+.copy:hover {
+  background: var(--pink);
+  color: var(--paper);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 40px;
+  font-weight: 500;
+}
+
+.links a:hover {
+  color: var(--pink);
+}

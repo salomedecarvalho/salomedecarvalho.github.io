@@ -1,0 +1,87 @@
+.box {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px 40px;
+  padding: clamp(20px, 2.4vw, 32px);
+  border-radius: 20px;
+}
+
+.intro {
+  background: var(--lilac);
+  color: var(--ink);
+}
+
+.closing {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.text {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.text p:last-child {
+  max-width: 62ch;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--pink);
+}
+
+.closing .text p:last-child {
+  color: color-mix(in srgb, var(--paper) 80%, var(--ink));
+}
+
+.actions {
+  display: grid;
+  justify-items: end;
+  gap: 8px;
+}
+
+.button {
+  font-weight: 600;
+  padding: 14px 26px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  white-space: nowrap;
+  transition: background var(--dur) var(--ease-out), scale 200ms var(--ease-out);
+}
+
+.closing .button {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.button:hover,
+.closing .button:hover {
+  background: var(--pink);
+  color: var(--paper);
+}
+
+.button:active {
+  scale: 0.97;
+}
+
+.fallback {
+  font-size: var(--fs-label);
+  opacity: 0.75;
+  user-select: all;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .box {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    justify-items: start;
+  }
+}

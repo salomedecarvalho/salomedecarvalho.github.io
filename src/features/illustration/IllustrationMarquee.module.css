@@ -1,0 +1,80 @@
+.section {
+  background: var(--lilac);
+  padding-block: var(--section-y);
+  overflow: hidden;
+}
+
+.rows {
+  display: grid;
+  gap: 16px;
+}
+
+.viewport {
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  align-items: center;
+  animation: marquee 60s linear infinite;
+}
+
+.reverse {
+  animation-direction: reverse;
+  animation-duration: 75s;
+}
+
+.rows:hover .track {
+  animation-play-state: paused;
+}
+
+.item {
+  flex: none;
+  transition: transform 450ms var(--ease-out);
+}
+
+.item:hover {
+  transform: rotate(-2deg) scale(1.03);
+}
+
+.portrait { width: clamp(200px, 22vw, 340px); }
+.square { width: clamp(220px, 24vw, 360px); }
+.landscape { width: clamp(280px, 32vw, 480px); }
+
+@keyframes marquee {
+  to {
+    transform: translateX(calc(-50% - 8px));
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.link {
+  font-weight: 600;
+  padding: 14px 26px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+  transition: background var(--dur) var(--ease-out), color var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out);
+}
+
+.link:hover {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: var(--paper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viewport {
+    overflow-x: auto;
+  }
+
+  .track {
+    animation: none;
+  }
+}

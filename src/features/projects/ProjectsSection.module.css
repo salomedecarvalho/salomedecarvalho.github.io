@@ -1,0 +1,10 @@
+.section {
+  padding-top: clamp(64px, 8vw, 120px);
+  padding-bottom: var(--section-y);
+  overflow: hidden;
+}
+
+.list {
+  display: grid;
+  gap: clamp(72px, 10vw, 160px);
+}

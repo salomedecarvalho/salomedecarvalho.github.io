@@ -1,0 +1,9 @@
+.outer {
+  width: 100%;
+  min-width: 0;
+}
+
+.inner {
+  display: inline-block;
+  white-space: nowrap;
+}

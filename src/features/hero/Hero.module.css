@@ -1,0 +1,129 @@
+.hero {
+  padding-top: calc(var(--nav-h) + 24px);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-inline: var(--gutter);
+  color: var(--ink);
+}
+
+.right {
+  text-align: right;
+}
+
+.name {
+  padding-inline: var(--gutter);
+  margin-block: clamp(20px, 3vw, 48px) clamp(20px, 3vw, 40px);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+
+.line {
+  display: block;
+  width: max-content;
+  animation: rise 900ms var(--ease-out) both;
+}
+
+.lineTwo {
+  margin-left: auto;
+  animation-delay: 120ms;
+}
+
+.lineTwo em {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.32em;
+  letter-spacing: 0;
+  text-transform: lowercase;
+  color: var(--pink);
+  vertical-align: 0.95em;
+  margin-right: 0.18em;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.25em);
+  }
+}
+
+.media {
+  position: relative;
+}
+
+.photo {
+  aspect-ratio: 16 / 8;
+  min-height: 360px;
+}
+
+.badge {
+  position: absolute;
+  right: var(--gutter);
+  bottom: var(--gutter);
+  width: clamp(104px, 11vw, 150px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--ink);
+  transition: background var(--dur) var(--ease-out), color var(--dur) var(--ease-out), scale 300ms var(--ease-out);
+}
+
+.badge svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: spin 14s linear infinite;
+  fill: currentColor;
+  font: 700 10px var(--font-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge > span {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.badge:hover {
+  background: var(--pink);
+  color: var(--paper);
+  scale: 1.06;
+}
+
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@media (max-width: 640px) {
+  .top {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .right {
+    text-align: left;
+  }
+
+  .photo {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+@media (max-width: 640px) {
+  .badge {
+    top: 20px;
+    bottom: auto;
+  }
+}

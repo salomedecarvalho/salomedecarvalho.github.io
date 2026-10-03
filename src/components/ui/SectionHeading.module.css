@@ -1,0 +1,37 @@
+.heading {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  text-align: center;
+  padding-block: 0 clamp(40px, 6vw, 80px);
+  isolation: isolate;
+}
+
+.title {
+  font-size: var(--fs-h2);
+  text-transform: uppercase;
+  max-width: 16ch;
+}
+
+.backdrop {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 55%;
+  translate: -50% -50%;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(5rem, 22vw, 22rem);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--pink);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.dark {
+  color: var(--paper);
+}

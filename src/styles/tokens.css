@@ -1,0 +1,41 @@
+/* Layout concept: editorial landing page — giant Syne type, full-bleed photos,
+   alternating light (lavender paper) and dark (aubergine) bands. Pink = interaction. */
+:root {
+  /* Brand */
+  --purple: #7234b7;
+  --lilac: #c7bfef;
+  --paper: #f9f5fe;
+  --ink: #351436;
+
+  /* Accents — pink for interaction, green used sparingly */
+  --pink: #f92d97;
+  --lime: #d0ed40;
+
+  /* Derived */
+  --ink-soft: color-mix(in srgb, var(--ink) 68%, var(--paper));
+  --line: color-mix(in srgb, var(--ink) 18%, transparent);
+  --line-on-dark: color-mix(in srgb, var(--paper) 20%, transparent);
+  --lilac-soft: color-mix(in srgb, var(--lilac) 45%, var(--paper));
+
+  /* Type */
+  --font-display: 'Syne', 'Arial Black', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --fs-giant: clamp(3.5rem, 15.5vw, 17rem);
+  --fs-h1: clamp(2.75rem, 8vw, 7.5rem);
+  --fs-h2: clamp(2.25rem, 5.5vw, 5rem);
+  --fs-h3: clamp(1.5rem, 2.6vw, 2.25rem);
+  --fs-lead: clamp(1.25rem, 2.2vw, 1.875rem);
+  --fs-body: 1.0625rem;
+  --fs-small: 0.875rem;
+  --fs-label: 0.75rem;
+
+  /* Space */
+  --gutter: clamp(16px, 3.5vw, 48px);
+  --section-y: clamp(80px, 12vw, 180px);
+  --nav-h: 64px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 450ms;
+}

@@ -1,0 +1,146 @@
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  padding-top: env(safe-area-inset-top, 0px);
+  transition: background var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
+}
+
+.scrolled {
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.inner {
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-inline: var(--gutter);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.375rem;
+  letter-spacing: -0.04em;
+  color: var(--purple);
+}
+
+.logo span {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--pink);
+}
+
+.links {
+  display: flex;
+  gap: clamp(14px, 2vw, 32px);
+  margin-inline: auto;
+}
+
+.links a {
+  position: relative;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  padding-block: 6px;
+}
+
+.links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--pink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.links a:hover,
+.links a.active {
+  color: var(--pink);
+}
+
+.links a:hover::after,
+.links a.active::after {
+  transform: scaleX(1);
+}
+
+.cta {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  transition: background var(--dur) var(--ease-out), transform 200ms var(--ease-out);
+}
+
+.cta:hover {
+  background: var(--pink);
+}
+
+.cta:active {
+  transform: scale(0.97);
+}
+
+.menuButton {
+  display: none;
+  margin-left: auto;
+  font-weight: 600;
+  font-size: var(--fs-small);
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+}
+
+.sheet {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .links,
+  .cta {
+    display: none;
+  }
+
+  .menuButton {
+    display: block;
+  }
+
+  .sheet {
+    display: block;
+    position: fixed;
+    inset: var(--nav-h) 0 0 0;
+    background: var(--ink);
+    padding: 32px var(--gutter);
+    opacity: 0;
+    transition: opacity 300ms var(--ease-out);
+  }
+
+  .sheetOpen {
+    opacity: 1;
+  }
+
+  .sheet ul {
+    display: grid;
+    gap: 4px;
+  }
+
+  .sheet a {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    text-transform: uppercase;
+    color: var(--paper);
+    letter-spacing: -0.02em;
+  }
+
+  .sheet a:hover {
+    color: var(--pink);
+  }
+}

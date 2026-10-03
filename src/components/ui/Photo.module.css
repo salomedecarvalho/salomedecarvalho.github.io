@@ -1,0 +1,79 @@
+.photo {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  background: var(--tone-bg);
+  --tone-bg: var(--lilac);
+  --tone-shape: var(--purple);
+  --tone-text: var(--ink);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.purple { --tone-bg: var(--purple); --tone-shape: var(--lilac); --tone-text: var(--paper); }
+.lilac  { --tone-bg: var(--lilac);  --tone-shape: var(--purple); --tone-text: var(--ink); }
+.ink    { --tone-bg: var(--ink);    --tone-shape: var(--pink);   --tone-text: var(--paper); }
+.pink   { --tone-bg: var(--pink);   --tone-shape: var(--ink);    --tone-text: var(--paper); }
+.lime   { --tone-bg: var(--lime);   --tone-shape: var(--purple); --tone-text: var(--ink); }
+
+.shape {
+  position: absolute;
+  background: var(--tone-shape);
+  opacity: 0.9;
+}
+
+/* Arch */
+.v0 {
+  width: 46%;
+  aspect-ratio: 1 / 1.35;
+  right: 12%;
+  bottom: 0;
+  border-radius: 999px 999px 0 0;
+}
+
+/* Quarter circle */
+.v1 {
+  width: 62%;
+  aspect-ratio: 1;
+  right: 0;
+  bottom: 0;
+  border-radius: 100% 0 0 0;
+}
+
+/* Circle */
+.v2 {
+  width: 38%;
+  aspect-ratio: 1;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+}
+
+.caption {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--tone-text);
+  font-size: 0.6875rem;
+  mix-blend-mode: normal;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}

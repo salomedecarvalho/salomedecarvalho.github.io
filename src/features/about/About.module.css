@@ -1,0 +1,149 @@
+.about {
+  padding-top: var(--section-y);
+  padding-bottom: clamp(32px, 4vw, 64px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  grid-template-areas:
+    '. eyebrow'
+    'media text';
+  column-gap: clamp(32px, 6vw, 120px);
+  row-gap: 24px;
+  align-items: start;
+}
+
+.eyebrow {
+  grid-area: eyebrow;
+  color: var(--purple);
+}
+
+/* Image stays put while the text scrolls past */
+.media {
+  grid-area: media;
+  position: sticky;
+  top: calc(var(--nav-h) + 24px);
+}
+
+.sticker {
+  position: absolute;
+  right: -24px;
+  bottom: 12%;
+  width: 128px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: var(--pink);
+  color: var(--paper);
+  font-weight: 600;
+  font-size: var(--fs-small);
+  line-height: 1;
+  rotate: -10deg;
+}
+
+.sticker strong {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  display: block;
+}
+
+.text {
+  display: grid;
+  gap: 24px;
+  min-width: 0;
+}
+
+.text {
+  grid-area: text;
+}
+
+.title {
+  font-size: var(--fs-h1);
+  text-transform: uppercase;
+}
+
+.title span {
+  color: var(--purple);
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: 1.35;
+  max-width: 30ch;
+}
+
+.text > p:not(.lead):not(.label) {
+  max-width: 60ch;
+  color: var(--ink-soft);
+}
+
+.hobbies {
+  display: grid;
+  gap: 14px;
+  margin-top: 8px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.hobbies .label {
+  color: var(--purple);
+}
+
+.rows {
+  display: grid;
+  gap: 10px;
+}
+
+/* Each row stretches its pills so both lines end at the same edge */
+.rows ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hobbies li {
+  flex: 1 1 auto;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.125rem;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+  transition: background var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out), color var(--dur) var(--ease-out);
+}
+
+.story {
+  display: grid;
+  gap: 12px;
+  margin-top: 10px;
+  max-width: 60ch;
+  font-size: 0.9375rem;
+  color: var(--ink-soft);
+}
+
+.hobbies li:hover {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: var(--paper);
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'eyebrow' 'media' 'text';
+  }
+
+  .media {
+    position: relative;
+    top: 0;
+  }
+
+  .sticker {
+    right: 12px;
+  }
+}

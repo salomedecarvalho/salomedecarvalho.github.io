@@ -157,6 +157,72 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'rigk',
+    title: 'RIGK Website Navigation',
+    shortTitle: 'RIGK',
+    summary: 'Rebuilding the menu structure of a sustainability website that had grown faster than its navigation.',
+    intro: [
+      'RIGK runs take-back and recycling systems for businesses and partners across Germany. Over the years their website kept growing: new programmes, new services, new departments, each one added where there happened to be space. The navigation never got rethought, so it ended up dense and hard to follow, especially for first-time visitors.',
+      "I led the redesign from research to implementation. The real job wasn't to make the menu look better. It was to find a structure that matched how visitors look for information, could take on new content without breaking, and that RIGK's own team could keep in shape after launch.",
+    ],
+    client: 'RIGK',
+    madeUnder: 'freyhauer',
+    year: '2025',
+    tags: ['UX Design', 'Information Architecture', 'UI Design', 'TYPO3'],
+    cover: { alt: 'RIGK website with the new navigation menu', tone: 'lilac' },
+    contributions: [
+      'Researched how comparable sites in the industry structure their navigation, to see which patterns users would already know.',
+      'Mapped the existing content and rebuilt it into a clear, logical hierarchy.',
+      'Designed the new menu structure, labels and visual layout.',
+      'Led alignment with the client through regular online meetings and email, turning feedback into clear design decisions.',
+      'Managed the timeline and milestones from concept to launch.',
+      'Worked closely with the developers to keep the design feasible inside TYPO3 before anything got built.',
+      'Restructured content in the TYPO3 backend to mirror the new menu logic.',
+      'Oversaw testing and fine-tuning during integration.',
+    ],
+    needs: [
+      {
+        title: "Visitors couldn't find their way in",
+        text: 'RIGK covers many services and audiences, and the old menu showed all of it at once. First-time visitors had no clear starting point.',
+      },
+      {
+        title: "The structure couldn't absorb growth",
+        text: 'Every new programme made the menu longer and less clear. RIGK needed a system where new content has an obvious place to go.',
+      },
+      {
+        title: "Groupings and labels didn't guide anyone",
+        text: 'Content was spread across departments and content types with no consistent logic, which made it hard for visitors to find things and hard for the team to maintain.',
+      },
+      {
+        title: 'The CMS set the rules',
+        text: "The site runs on TYPO3, so any new structure had to work within its technical limits and stay easy for the client's team to edit.",
+      },
+    ],
+    focus: [
+      {
+        title: 'Structure first, visuals second',
+        text: 'Before designing anything, I mapped every page and rebuilt the hierarchy so each one sits in exactly one logical place. Most of the clarity comes from this step. The visual layer only makes the structure easy to read.',
+      },
+      {
+        title: 'Labels written for visitors',
+        text: "Every category name and grouping was chosen from the visitor's point of view. The aim was for people to recognise their own question in the menu, while every department's content stayed accurately represented.",
+      },
+      {
+        title: 'Designing within the constraints',
+        text: 'Instead of designing an ideal menu and adapting it to TYPO3 later, I brought the developers in early. That meant fewer surprises during build and a responsive menu that worked as designed.',
+      },
+      {
+        title: 'A backend that matches the front end',
+        text: "With the developers' help, I restructured the TYPO3 page tree to mirror the new menu. If the backend matches what visitors see, the client's team can add pages without slowly undoing the structure, which keeps it scalable over time.",
+      },
+    ],
+    goal: 'A clearer, lighter navigation that reduces friction for visitors and gives RIGK a framework that can grow with them. Since the backend now follows the same logic as the menu, the site is easier to maintain and extend. Both the client and the development team pointed this out after launch.',
+    gallery: [
+      { alt: 'New navigation menu', tone: 'purple' },
+      { alt: 'Content structure and hierarchy', tone: 'lime' },
+    ],
+  },
+  {
     slug: 'case-heritage-building',
     title: 'Brand & Website for a Heritage Building',
     shortTitle: 'Heritage building',
@@ -227,38 +293,5 @@ export const projects: Project[] = [
     goal: 'A complete marketing website for a technically complex product: clear enough for a first-time visitor to understand the value, specific enough to earn the trust of a seasoned broadcast engineer. Every page and content section delivered independently, from research to final UI.',
     // Confidential: only the cover image is shown.
     gallery: [],
-  },
-  {
-    slug: 'b2b-crm',
-    title: 'B2B CRM Redesign',
-    shortTitle: 'CRM',
-    summary: 'Full UX redesign of a CRM platform used daily by internal teams and clients.',
-    intro: [
-      'A full UX redesign of a complex B2B CRM platform used every day by internal teams and external clients.',
-      'User research turned into service flows, journey maps and interface improvements that reduced task friction.',
-    ],
-    madeUnder: 'RedOcean',
-    year: '2023',
-    tags: ['UX Research', 'Product Design', 'Design System'],
-    cover: { alt: 'CRM dashboard redesign', tone: 'lilac' },
-    contributions: [
-      'Conducted user interviews across all stakeholder groups.',
-      'Translated insights into service flows, journey maps and UI improvements.',
-      'Built and maintained the design system for visual consistency and component reuse.',
-      'Worked with developers to implement improvements and keep quality consistent.',
-    ],
-    needs: [
-      { title: 'Reduce daily friction', text: 'Align the interface with real daily-use patterns and business goals.' },
-      { title: 'One coherent platform', text: 'Consistency across many screens and user groups.' },
-    ],
-    focus: [
-      { title: 'Research-led', text: 'Every change traced back to interviews and observed workflows.' },
-      { title: 'Design system', text: 'A shared component library to keep the platform coherent as it grows.' },
-    ],
-    goal: 'A calmer, faster CRM shaped around how people actually work. (Placeholder case — add details and visuals.)',
-    gallery: [
-      { alt: 'Journey map', tone: 'pink' },
-      { alt: 'Redesigned screens', tone: 'purple' },
-    ],
   },
 ]

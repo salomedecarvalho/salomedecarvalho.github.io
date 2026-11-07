@@ -12,6 +12,9 @@ html {
   scroll-padding-top: var(--nav-h);
   color-scheme: light;
   overflow-x: clip;
+  /* Stop iOS from enlarging text on its own, which breaks FitText's measurements */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {

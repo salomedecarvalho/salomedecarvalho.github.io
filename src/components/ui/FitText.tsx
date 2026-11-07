@@ -18,17 +18,36 @@ export function FitText({ children, className = '', max = 400 }: Props) {
     const i = inner.current
     if (!o || !i) return
 
+    const round = (px: number) => Math.floor(px * 100) / 100
     const fit = () => {
+      const width = o.clientWidth
       i.style.fontSize = '100px'
-      const ratio = o.clientWidth / i.scrollWidth
-      i.style.fontSize = `${Math.min(max, Math.floor(100 * ratio * 100) / 100)}px`
+      let size = Math.min(max, (100 * width) / i.scrollWidth)
+      i.style.fontSize = `${round(size)}px`
+      // Mobile browsers can enlarge text unevenly (iOS text autosizing, text zoom),
+      // so check the real width once more and shrink if it still overflows.
+      if (i.scrollWidth > width) {
+        size *= width / i.scrollWidth
+        i.style.fontSize = `${round(size)}px`
+      }
     }
 
-    fit()
-    document.fonts?.ready.then(fit)
-    const ro = new ResizeObserver(fit)
+    // Only refit when the width changes: the height changes with every fit,
+    // and reacting to that can make the text (and the page below it) jitter.
+    let lastWidth = -1
+    const ro = new ResizeObserver(() => {
+      if (o.clientWidth === lastWidth) return
+      lastWidth = o.clientWidth
+      fit()
+    })
     ro.observe(o)
-    return () => ro.disconnect()
+    // The web font can arrive after the first fit and is wider than the fallback.
+    document.fonts?.ready.then(fit)
+    document.fonts?.addEventListener('loadingdone', fit)
+    return () => {
+      ro.disconnect()
+      document.fonts?.removeEventListener('loadingdone', fit)
+    }
   }, [max])
 
   return (

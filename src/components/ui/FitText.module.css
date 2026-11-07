@@ -1,6 +1,8 @@
 .outer {
   width: 100%;
   min-width: 0;
+  /* Safety net: oversized text must never make the page wider than the screen (mobile wobble) */
+  overflow-x: clip;
 }
 
 .inner {

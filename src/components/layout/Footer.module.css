@@ -67,3 +67,10 @@
 .bottom a:hover {
   color: var(--pink);
 }
+
+/* Phones: "Salomé" on its own line so the wordmark can be twice as big */
+@media (max-width: 640px) {
+  .first {
+    display: block;
+  }
+}

@@ -33,7 +33,8 @@ export function Footer() {
 
       <div className={`container ${styles.wordmark}`} aria-hidden="true">
         <FitText max={200}>
-          Salomé<span className={styles.de}>de</span>Carvalho
+          <span className={styles.first}>Salomé</span>
+          <span className={styles.de}>de</span>Carvalho
         </FitText>
       </div>
 

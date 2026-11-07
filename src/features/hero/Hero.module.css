@@ -59,8 +59,9 @@
 }
 
 .photo {
-  aspect-ratio: 16 / 8;
-  min-height: 360px;
+  aspect-ratio: 16 / 9;
+  max-height: calc(100vh - var(--nav-h));
+  width: 100%;
 }
 
 .badge {
@@ -117,7 +118,7 @@
   }
 
   .photo {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1 / 1;
   }
 }
 

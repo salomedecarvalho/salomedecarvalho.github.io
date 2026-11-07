@@ -18,12 +18,12 @@
   gap: 16px;
   width: max-content;
   align-items: center;
-  animation: marquee 60s linear infinite;
+  animation: marquee 120s linear infinite;
 }
 
 .reverse {
   animation-direction: reverse;
-  animation-duration: 75s;
+  animation-duration: 100s;
 }
 
 .rows:hover .track {
@@ -39,9 +39,13 @@
   transform: rotate(-2deg) scale(1.03);
 }
 
-.portrait { width: clamp(200px, 22vw, 340px); }
-.square { width: clamp(220px, 24vw, 360px); }
-.landscape { width: clamp(280px, 32vw, 480px); }
+/* Every illustration keeps its own shape; only the height is shared */
+.item img {
+  height: clamp(220px, 24vw, 380px);
+  width: auto;
+  max-width: none;
+  display: block;
+}
 
 @keyframes marquee {
   to {

@@ -30,7 +30,7 @@
   position: absolute;
   right: -24px;
   bottom: 12%;
-  width: 128px;
+  width: 144px;
   aspect-ratio: 1;
   border-radius: 50%;
   display: grid;
@@ -39,8 +39,8 @@
   background: var(--pink);
   color: var(--paper);
   font-weight: 600;
-  font-size: var(--fs-small);
-  line-height: 1;
+  font-size: 0.8125rem;
+  line-height: 1.1;
   rotate: -10deg;
 }
 
@@ -48,7 +48,9 @@
   font-family: var(--font-display);
   font-size: 3rem;
   font-weight: 800;
+  line-height: 1;
   display: block;
+  margin-bottom: 4px;
 }
 
 .text {

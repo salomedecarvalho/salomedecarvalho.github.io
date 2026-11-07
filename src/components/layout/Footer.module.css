@@ -58,6 +58,12 @@
   margin-top: 16px;
 }
 
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
 .bottom a:hover {
   color: var(--pink);
 }

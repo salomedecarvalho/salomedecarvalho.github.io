@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { navItems } from '../../data/profile'
 import { useActiveSection } from '../../hooks/useActiveSection'
+import { useLockBodyScroll } from '../../hooks/useLockBodyScroll'
 import styles from './AnchorNav.module.css'
 
 const ids = navItems.map((item) => item.id)
@@ -9,6 +10,7 @@ export function AnchorNav() {
   const active = useActiveSection(ids)
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  useLockBodyScroll(open)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -20,8 +22,15 @@ export function AnchorNav() {
   useEffect(() => {
     if (!open) return
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
+    // Close the mobile menu if the window grows to desktop width, so the page doesn't stay locked.
+    const desktop = window.matchMedia('(min-width: 861px)')
+    const onResize = () => desktop.matches && setOpen(false)
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+    desktop.addEventListener('change', onResize)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      desktop.removeEventListener('change', onResize)
+    }
   }, [open])
 
   return (

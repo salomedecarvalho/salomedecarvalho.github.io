@@ -1,7 +1,7 @@
 import { FitText } from '../../components/ui/FitText'
-import { Photo } from '../../components/ui/Photo'
 import { profile } from '../../data/profile'
 import styles from './Hero.module.css'
+import { HeroAnimation } from './HeroAnimation'
 
 export function Hero() {
   return (
@@ -30,10 +30,7 @@ export function Hero() {
       </h1>
 
       <div className={styles.media}>
-        <Photo
-          photo={{ alt: 'Hero image — portrait or work collage', tone: 'purple' }}
-          className={styles.photo}
-        />
+        <HeroAnimation className={styles.photo} />
         <a href="#work" className={styles.badge} aria-label="See selected projects">
           <svg viewBox="0 0 120 120" aria-hidden="true">
             <defs>

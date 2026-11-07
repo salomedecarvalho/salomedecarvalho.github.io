@@ -111,7 +111,13 @@ export function ProjectModal({ project, prev, next, onClose, onNavigate }: Props
             {project.confidential && <RequestAccess project={project} />}
           </header>
 
-          <Photo photo={project.cover} className={styles.cover} />
+          {project.cover.src ? (
+            <div className={styles.wrap}>
+              <Photo photo={project.cover} natural />
+            </div>
+          ) : (
+            <Photo photo={project.cover} className={styles.cover} />
+          )}
 
           {/* Contributions */}
           <section className={`${styles.wrap} ${styles.split}`}>
@@ -138,7 +144,7 @@ export function ProjectModal({ project, prev, next, onClose, onNavigate }: Props
 
           {hero && (
             <div className={styles.wrap}>
-              <Photo photo={hero} ratio="16 / 9" />
+              <Photo photo={hero} ratio="16 / 9" natural />
             </div>
           )}
 
@@ -158,7 +164,13 @@ export function ProjectModal({ project, prev, next, onClose, onNavigate }: Props
           {rest.length > 0 && (
             <div className={`${styles.wrap} ${styles.gallery}`}>
               {rest.map((photo, i) => (
-                <Photo key={photo.alt} photo={photo} ratio={i === 0 && rest.length % 2 ? '16 / 9' : '4 / 5'} className={i === 0 && rest.length % 2 ? styles.wide : ''} />
+                <Photo
+                  key={photo.alt}
+                  photo={photo}
+                  natural
+                  ratio={i === 0 && rest.length % 2 ? '16 / 9' : '4 / 5'}
+                  className={i === 0 && rest.length % 2 ? styles.wide : ''}
+                />
               ))}
             </div>
           )}

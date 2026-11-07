@@ -5,7 +5,7 @@ import styles from './ProjectCard.module.css'
 
 interface Props {
   project: Project
-  layout: 'feature' | 'left' | 'right'
+  layout: 'left' | 'right'
   onOpen: (slug: string) => void
 }
 
@@ -37,7 +37,10 @@ export function ProjectCard({ project, layout, onOpen }: Props) {
       <div className={styles.body}>
         <p className={`label ${styles.meta}`}>
           {project.confidential ? (
-            <span className={styles.lock}>Confidential case study</span>
+            <>
+              <span className={styles.lock}>Confidential case study</span>
+              {project.madeUnder ? ` · ${project.madeUnder}` : ''}
+            </>
           ) : (
             <>
               {project.client ? `${project.client} · ` : ''}

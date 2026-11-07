@@ -1,14 +1,22 @@
+import { img } from './images'
 import type { Tone } from './projects'
 
 export const profile = {
   name: 'Salomé de Carvalho',
   firstName: 'Salomé',
   lastName: 'de Carvalho',
+  /** Full legal name, as on the ID. Used in the Impressum and privacy policy. */
+  legalName: 'Salomé Costa de Carvalho',
   role: 'Product & UX/UI Designer',
   location: 'Wiesbaden, Germany',
   email: 'salomedecarvalho.design@gmail.com',
+  /**
+   * Serviceable address for the Impressum (§ 5 DDG), provided by Dein Impressum.
+   * The c/o line must stay exactly as it is: shortening it breaks delivery.
+   */
+  legalAddress: ['c/o Impressumservice Dein-Impressum', 'Stettiner Str. 41', '35410 Hungen'],
   linkedin: 'https://www.linkedin.com/in/salomedecarvalho',
-  instagram: 'https://www.instagram.com/',
+  instagram: 'https://www.instagram.com/art_and_sparkles',
   /** Two rows, each stretched to the same width. */
   hobbies: [
     ['Cooking', 'Horror & thriller books'],
@@ -152,13 +160,15 @@ export const education = [
   { period: '2022 — 2023', title: 'UX, UI, UX Writing and UX Research & Strategy courses', place: 'TheStarter, PT' },
 ]
 
-export const illustrations: { title: string; tone: Tone; ratio: 'portrait' | 'square' | 'landscape' }[] = [
-  { title: 'Illustration 01', tone: 'pink', ratio: 'portrait' },
-  { title: 'Illustration 02', tone: 'lilac', ratio: 'square' },
-  { title: 'Illustration 03', tone: 'ink', ratio: 'portrait' },
-  { title: 'Illustration 04', tone: 'lime', ratio: 'landscape' },
-  { title: 'Illustration 05', tone: 'purple', ratio: 'portrait' },
-  { title: 'Illustration 06', tone: 'ink', ratio: 'square' },
-  { title: 'Illustration 07', tone: 'pink', ratio: 'landscape' },
-  { title: 'Illustration 08', tone: 'lilac', ratio: 'portrait' },
+/** width/height are the image files' pixel sizes: update them if you swap an image. */
+export const illustrations: { src: string; alt: string; width: number; height: number }[] = [
+  { src: img('illustrations/01'), alt: 'Marker illustration of a black cat among pumpkins', width: 1400, height: 997 },
+  { src: img('illustrations/02'), alt: 'Sketchbook drawing of a sleeping dog', width: 598, height: 863 },
+  { src: img('illustrations/03'), alt: 'Still life with a skull, a candle and fruit', width: 1400, height: 1019 },
+  { src: img('illustrations/04'), alt: 'Black cat on a yellow background', width: 610, height: 718 },
+  { src: img('illustrations/05'), alt: 'Small card with flowers in a watering can', width: 1050, height: 1400 },
+  { src: img('illustrations/06'), alt: 'Breakfast spread on purple with fish, eggs, fruit and pastries', width: 1400, height: 1002 },
+  { src: img('illustrations/07'), alt: 'French bulldog portrait in black ink', width: 722, height: 1020 },
+  { src: img('illustrations/08'), alt: 'Postcard-sized illustration of a city street', width: 768, height: 1024 },
+  { src: img('illustrations/09'), alt: 'Portrait of a long-haired dog', width: 682, height: 940 },
 ]

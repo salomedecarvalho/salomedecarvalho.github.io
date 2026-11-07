@@ -7,9 +7,26 @@ import { Hero } from './features/hero/Hero'
 import { IllustrationMarquee } from './features/illustration/IllustrationMarquee'
 import { Intro } from './features/intro/Intro'
 import { ProjectsSection } from './features/projects/ProjectsSection'
+import { LegalPage } from './features/legal/LegalPage'
 import { Skills } from './features/skills/Skills'
+import { imprint } from './data/imprint'
+import { privacyPolicy } from './data/privacy'
+import { useHashView } from './hooks/useHashView'
 
 export default function App() {
+  const view = useHashView()
+
+  if (view !== 'home') {
+    return (
+      <>
+        <AnchorNav />
+        {/* key resets the language switch when moving between the two legal pages */}
+        <LegalPage key={view} content={view === 'imprint' ? imprint : privacyPolicy} />
+        <Footer />
+      </>
+    )
+  }
+
   return (
     <>
       <AnchorNav />

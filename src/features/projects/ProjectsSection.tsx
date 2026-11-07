@@ -20,7 +20,7 @@ export function ProjectsSection() {
         <ul className={styles.list}>
           {projects.map((project, i) => (
             <li key={project.slug}>
-              <ProjectCard project={project} layout={i === 0 ? 'feature' : i % 2 ? 'left' : 'right'} onOpen={setOpenSlug} />
+              <ProjectCard project={project} layout={i % 2 ? 'right' : 'left'} onOpen={setOpenSlug} />
             </li>
           ))}
         </ul>

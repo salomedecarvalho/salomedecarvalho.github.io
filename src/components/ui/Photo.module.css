@@ -17,6 +17,12 @@
   object-fit: cover;
 }
 
+.natural,
+.natural img {
+  height: auto;
+  min-height: 0;
+}
+
 .purple { --tone-bg: var(--purple); --tone-shape: var(--lilac); --tone-text: var(--paper); }
 .lilac  { --tone-bg: var(--lilac);  --tone-shape: var(--purple); --tone-text: var(--ink); }
 .ink    { --tone-bg: var(--ink);    --tone-shape: var(--pink);   --tone-text: var(--paper); }

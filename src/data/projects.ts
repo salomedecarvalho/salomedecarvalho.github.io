@@ -1,7 +1,9 @@
+import { img } from './images'
+
 export type Tone = 'purple' | 'lilac' | 'ink' | 'pink' | 'lime'
 
 export interface Photo {
-  /** Replace with a real image path (e.g. /images/manda/hero.jpg). Until then a placeholder renders. */
+  /** Image URL, e.g. img('manda/cover'). Without it a branded placeholder renders. */
   src?: string
   alt: string
   tone: Tone
@@ -50,7 +52,7 @@ export const projects: Project[] = [
     madeUnder: 'Unflow',
     year: '2024',
     tags: ['UX/UI Design', 'Web Design', 'Product Design'],
-    cover: { alt: 'Manda student dashboard on laptop and phone', tone: 'purple' },
+    cover: { src: img('manda/cover'), alt: 'Manda student dashboard on a laptop in a classroom', tone: 'purple' },
     contributions: [
       'Led UX and UI design for both web and mobile platforms, working closely with product managers, developers and the client.',
       'Created user flows and wireframes based on research, AI model limitations and user types.',
@@ -97,10 +99,9 @@ export const projects: Project[] = [
       { value: '−30%', label: 'admin tasks for tutors' },
     ],
     gallery: [
-      { alt: 'Gamified dashboard — levels and badges', tone: 'lilac' },
-      { alt: 'Mobile app screens', tone: 'pink' },
-      { alt: 'Marketing website homepage', tone: 'ink' },
-      { alt: 'Component library overview', tone: 'lime' },
+      { src: img('manda/01'), alt: 'Manda website for parents with the AI assistant chat', tone: 'lilac' },
+      { src: img('manda/02'), alt: 'Lesson cards for fractions, writing, geometry and number patterns', tone: 'pink' },
+      { src: img('manda/03'), alt: 'Gamified progress dashboard with leaderboard and badges', tone: 'pink' },
     ],
   },
   {
@@ -116,7 +117,7 @@ export const projects: Project[] = [
     madeUnder: 'freyhauer',
     year: '2025',
     tags: ['UX/UI Design', 'Web Design', 'TYPO3'],
-    cover: { alt: 'ECOS website on desktop', tone: 'pink' },
+    cover: { src: img('ecos/cover'), alt: 'Redesigned ECOS homepage on a laptop', tone: 'pink' },
     contributions: [
       'Worked closely with a coworker for cohesive design, shared decisions and efficient execution.',
       "Created a complete design system to guide the website's visual and structural foundations.",
@@ -151,9 +152,9 @@ export const projects: Project[] = [
     ],
     goal: 'A more intuitive navigation experience, clearer content structure and much easier access to support, on top of a design system that speeds up page building and gives the site a stable foundation for future expansion.',
     gallery: [
-      { alt: 'Navigation and mega menu', tone: 'lilac' },
-      { alt: 'Support page layouts', tone: 'purple' },
-      { alt: 'Design system components', tone: 'lime' },
+      { src: img('ecos/02'), alt: 'Product page with benefits section', tone: 'lime' },
+      { src: img('ecos/01'), alt: 'ECOS product page on a laptop', tone: 'lilac' },
+      { src: img('ecos/03'), alt: 'Page hero with headline and visual', tone: 'ink' },
     ],
   },
   {
@@ -169,7 +170,7 @@ export const projects: Project[] = [
     madeUnder: 'freyhauer',
     year: '2025',
     tags: ['UX Design', 'Information Architecture', 'UI Design', 'TYPO3'],
-    cover: { alt: 'RIGK website with the new navigation menu', tone: 'lilac' },
+    cover: { src: img('rigk/cover'), alt: 'RIGK website with the new navigation on a laptop in a recycling facility', tone: 'lilac' },
     contributions: [
       'Researched how comparable sites in the industry structure their navigation, to see which patterns users would already know.',
       'Mapped the existing content and rebuilt it into a clear, logical hierarchy.',
@@ -218,8 +219,9 @@ export const projects: Project[] = [
     ],
     goal: 'A clearer, lighter navigation that reduces friction for visitors and gives RIGK a framework that can grow with them. Since the backend now follows the same logic as the menu, the site is easier to maintain and extend. Both the client and the development team pointed this out after launch.',
     gallery: [
-      { alt: 'New navigation menu', tone: 'purple' },
-      { alt: 'Content structure and hierarchy', tone: 'lime' },
+      { src: img('rigk/01'), alt: 'Redesigned navigation menu, first section open', tone: 'lime' },
+      { src: img('rigk/02'), alt: 'Navigation menu with a second section open', tone: 'lilac' },
+      { src: img('rigk/03'), alt: 'Navigation menu with a third section open', tone: 'lime' },
     ],
   },
   {
@@ -232,10 +234,11 @@ export const projects: Project[] = [
       "The challenge was a visual identity and digital presence as considered as the space itself, able to grow alongside the building's renovation from construction to full occupancy. I handled everything: brand identity, colour direction and a three-phase single-page website concept.",
     ],
     role: 'Brand & UX/UI Designer (solo)',
+    madeUnder: 'freyhauer',
     year: '2025',
     tags: ['Branding', 'UX/UI Design', 'Web Design', 'Product Design'],
     confidential: true,
-    cover: { alt: 'Brand identity and website overview', tone: 'ink' },
+    cover: { src: img('heritage-building/cover'), alt: 'Website for the heritage building on a laptop (details blurred for confidentiality)', tone: 'ink' },
     contributions: [
       'Defined the three-phase product strategy: one evolving website instead of three separate builds.',
       'Created the brand identity and colour direction, balancing the building\'s history with a contemporary feel.',
@@ -268,10 +271,11 @@ export const projects: Project[] = [
       'I handled everything independently, from scope analysis and market research to UX strategy, content structure, UX copy and full UI design across every page.',
     ],
     role: 'UX/UI Designer & Content Strategist (solo)',
+    madeUnder: 'freyhauer',
     year: '2026',
     tags: ['UX/UI Design', 'Web Design', 'Content Strategy', 'Marketing Website'],
     confidential: true,
-    cover: { alt: 'Website homepage — dark, high-contrast UI', tone: 'lime' },
+    cover: { src: img('broadcast-platform/cover'), alt: 'Broadcast platform website on a laptop (details blurred for confidentiality)', tone: 'lime' },
     contributions: [
       'Ran scope analysis and market research to understand the industry, map the competitive landscape and define audience profiles before designing anything.',
       'Defined the full information architecture and content strategy: navigation, user journeys and page hierarchy for multiple visitor types in one coherent system.',

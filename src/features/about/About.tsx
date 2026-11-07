@@ -1,4 +1,5 @@
 import { Photo } from '../../components/ui/Photo'
+import { img } from '../../data/images'
 import { profile } from '../../data/profile'
 import styles from './About.module.css'
 
@@ -9,9 +10,18 @@ export function About() {
         <p className={`label ${styles.eyebrow}`}>About me</p>
 
         <div className={styles.media}>
-          <Photo photo={{ alt: 'Portrait of Salomé', tone: 'lilac' }} ratio="4 / 5" />
+          <Photo
+            photo={{ src: img('about/portrait'), alt: 'Salomé smiling at her desk with her markers and drawings', tone: 'lilac' }}
+            ratio="4 / 5"
+            focus="50% 20%"
+          />
           <span className={styles.sticker}>
-            <strong>5+</strong> years
+            <strong>5+</strong>
+            <span>
+              years
+              <br />
+              experience
+            </span>
           </span>
         </div>
 

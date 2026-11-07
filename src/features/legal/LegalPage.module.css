@@ -1,0 +1,123 @@
+.page {
+  padding-top: calc(var(--nav-h) + clamp(40px, 6vw, 88px));
+  padding-bottom: var(--section-y);
+  padding-inline: var(--gutter);
+}
+
+.inner {
+  max-width: 760px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+
+.back {
+  justify-self: start;
+  color: var(--purple);
+  transition: color var(--dur) var(--ease-out);
+}
+
+.back:hover {
+  color: var(--pink);
+}
+
+.switch {
+  display: flex;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.switch button {
+  font-weight: 600;
+  font-size: var(--fs-small);
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+  transition: background var(--dur) var(--ease-out), color var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out);
+}
+
+.switch button[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.switch button:hover {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: var(--paper);
+}
+
+.title {
+  margin-top: 24px;
+  /* Syne 800 caps are very wide: sized so "DATENSCHUTZ-" fits the column on every screen */
+  font-size: clamp(1.6rem, 6.4vw, 3.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  color: var(--purple);
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.updated {
+  margin-top: 16px;
+  color: var(--ink-soft);
+}
+
+.section {
+  display: grid;
+  gap: 14px;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.section h2 {
+  font-size: clamp(1.375rem, 2.4vw, 1.875rem);
+  text-transform: uppercase;
+}
+
+.section p,
+.list {
+  max-width: 65ch;
+  color: var(--ink-soft);
+}
+
+.list {
+  display: grid;
+  gap: 6px;
+}
+
+.list li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--pink);
+}
+
+.link {
+  color: var(--purple);
+  font-weight: 600;
+  border-bottom: 1.5px solid currentColor;
+  overflow-wrap: anywhere;
+  transition: color var(--dur) var(--ease-out);
+}
+
+.link:hover {
+  color: var(--pink);
+}
+
+.lines {
+  display: grid;
+  gap: 2px;
+}

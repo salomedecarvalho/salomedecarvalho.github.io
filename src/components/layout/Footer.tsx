@@ -1,6 +1,14 @@
+import type { MouseEvent } from 'react'
 import { FitText } from '../ui/FitText'
 import { navItems, profile } from '../../data/profile'
 import styles from './Footer.module.css'
+
+/** On the legal pages there is no #top (the hero), so scroll up there instead of leaving the page. */
+function scrollToPageTop(e: MouseEvent<HTMLAnchorElement>) {
+  if (document.getElementById('top')) return
+  e.preventDefault()
+  window.scrollTo({ top: 0 })
+}
 
 export function Footer() {
   return (
@@ -31,7 +39,11 @@ export function Footer() {
 
       <div className={`container ${styles.bottom}`}>
         <span>© {new Date().getFullYear()} {profile.name}</span>
-        <a href="#top">Back to top ↑</a>
+        <div className={styles.legal}>
+          <a href="#imprint">Imprint</a>
+          <a href="#privacy">Privacy policy</a>
+          <a href="#top" onClick={scrollToPageTop}>Back to top ↑</a>
+        </div>
       </div>
     </footer>
   )

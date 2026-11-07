@@ -20,7 +20,7 @@ export function Hero() {
       </div>
 
       <h1 className={styles.name} aria-label={profile.name}>
-        <FitText max={320}>
+        <FitText max={320} fixedBelow={641}>
           <span className={styles.line}>{profile.firstName}</span>
           <span className={`${styles.line} ${styles.lineTwo}`}>
             <em>de</em>

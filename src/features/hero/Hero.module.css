@@ -121,10 +121,25 @@
     aspect-ratio: 1 / 1;
   }
 
-  /* Phones: names fill the width (FitText), "de" stays a fixed 24px */
+  /* Phones: fixed sizes, not scaled to the screen (FitText is switched off below 641px) */
+  .name {
+    font-size: 32px;
+  }
+
   .lineTwo em {
-    font-size: 24px;
-    vertical-align: 0.2em;
+    font-size: 16px;
+    vertical-align: 0.5em;
+  }
+}
+
+/* Small phones (iPhone SE 1st gen and similar, 320px wide) */
+@media (max-width: 374px) {
+  .name {
+    font-size: 26px;
+  }
+
+  .lineTwo em {
+    font-size: 14px;
   }
 }
 

@@ -73,4 +73,15 @@
   .first {
     display: block;
   }
+
+  /* Fixed size on phones (FitText is switched off below 641px) */
+  .wordmark {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 374px) {
+  .wordmark {
+    font-size: 26px;
+  }
 }

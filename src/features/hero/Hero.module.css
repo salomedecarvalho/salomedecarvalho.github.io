@@ -121,11 +121,7 @@
     aspect-ratio: 1 / 1;
   }
 
-  /* Phones: fixed sizes instead of FitText's fill-the-width size (!important beats its inline style) */
-  .name > div > span {
-    font-size: min(30px, 8.8vw) !important; /* 30px, a touch less on 320px-wide phones */
-  }
-
+  /* Phones: names fill the width (FitText), "de" stays a fixed 24px */
   .lineTwo em {
     font-size: 24px;
     vertical-align: 0.2em;

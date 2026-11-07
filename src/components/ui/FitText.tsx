@@ -24,9 +24,9 @@ export function FitText({ children, className = '', max = 400 }: Props) {
       i.style.fontSize = '100px'
       let size = Math.min(max, (100 * width) / i.scrollWidth)
       i.style.fontSize = `${round(size)}px`
-      // Mobile browsers can enlarge text unevenly (iOS text autosizing, text zoom),
-      // so check the real width once more and shrink if it still overflows.
-      if (i.scrollWidth > width) {
+      // Parts with a fixed size (e.g. a small "de" set in px) and mobile text zoom don't
+      // scale in proportion, so check the real width and shrink until it fits.
+      for (let pass = 0; pass < 4 && i.scrollWidth > width; pass++) {
         size *= width / i.scrollWidth
         i.style.fontSize = `${round(size)}px`
       }
